@@ -23,6 +23,33 @@
             placeholder="Your Secure Password"
             aria-label="Generated Password"
           ></textarea>
+
+      <!-- Form for password specifics -->
+          <form>
+             <!-- Number of Characters -->
+            <label for="">Number of Characters</label>
+            <input type="range" min="1" max="50" id="characterAmountRange" value="10">
+            <input type="number" min="1" max="50" id="characterAmountNumber"value="10">
+            
+            <!-- Uppercase -->
+            <label for="">Include Upper Case</label>
+            <input type="checkbox" id="upper">
+            
+
+            <!-- Lowercase -->
+            <label for="">Include Lower Case</label>
+            <input type="checkbox" id="lower">
+            <!-- Numeric -->
+
+            <label for="">Include Numbers</label>
+            <input type="checkbox" id="numbers">
+
+            <!-- Special Characters -->
+            <label for="">Special Chararcters (!#$ etc.)</label>
+            <input type="checkbox" id="special">
+          
+          </form>
+
         </div>
         <div class="card-footer">
           <button id="generate" class="btn">Generate Password</button>
