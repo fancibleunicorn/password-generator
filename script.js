@@ -40,10 +40,35 @@ function generatePassword() {
             password = password + special;
         }
         
+        //Password Length
         var passLength = confirmLength;
+
+       //Generate Random Character from selected Characters
+        function random() {
+        randomChar = password[Math.floor(Math.random()*password.length)];
+        
+        }
+     
+        var finalPass = random()*passLength;
+
+        console.log(finalPass);
+        
+
+
+
+        // for (var i = 0; i < passLength; i++) {
+        //   i = 
+        //   console.log(password[i]);
+        // }
+
+        
+      
 
         console.log(password);
         console.log(passLength);
+        //console.log(random);
+        //console.log(random);
+        //console.log(random);
       }
 
       else {
