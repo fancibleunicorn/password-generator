@@ -6,7 +6,16 @@ var upper ="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 var number ="0123456789"
 var special =" !#$%&'()*+,-./:;<=>?@][\^_`{|}~\""
 
+//When Button is clicked
 
+function generatePassword() {
+
+    prompt("How many characters? (choose between 8 and 128)");
+    confirm("Include Lowercase? (Press OK for yes, or Cancel for no)");
+    confirm("Include Uppercase? (Press OK for yes, or Cancel for no)");
+    confirm("Include Numbers? (Press OK for yes, or Cancel for no)");
+    confirm("Include Special Characters? (Press OK for yes, or Cancel for no)")
+}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
