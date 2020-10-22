@@ -5,6 +5,7 @@ var lower ="abcdefghijklmnopqrstuvwxyz"
 var upper ="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 var number ="0123456789"
 var special =" !#$%&'()*+,-./:;<=>?@][\^_`{|}~\""
+var options = ""
 var password = ""
 
 
@@ -13,64 +14,55 @@ var password = ""
 
 function generatePassword() {
 
+    //Reset password and character options
+    password = ""
+    options = ""
+
     //Password Length
     var confirmLength = prompt("How many characters? (choose between 8 and 128)");
+
       if (confirmLength >7 && confirmLength <128) {
 
         //Lower Case?
         var confirmLower = confirm("Include Lowercase? (Press OK for yes, or Cancel for no)");
           if(confirmLower) {
-            password = lower;
+            options = lower;
           }
         //Upper Case?
         var confirmUpper = confirm("Include Uppercase? (Press OK for yes, or Cancel for no)");
           if(confirmUpper) {
-            password = password + upper;
+            options = options + upper;
           }
 
         //Numbers?
         var confirmNumber = confirm("Include Numbers? (Press OK for yes, or Cancel for no)");
           if(confirmNumber) {
-            password = password + number;
+            options = options + number;
         }
 
         //Special?
           var confirmSpecial = confirm("Include Special Characters? (Press OK for yes, or Cancel for no)");
           if(confirmSpecial) {
-            password = password + special;
+            options = options + special;
         }
         
         //Password Length
         var passLength = confirmLength;
 
-       //Generate Random Character from selected Characters
-        function random() {
-        randomChar = password[Math.floor(Math.random()*password.length)];
-        
+       //Generate Random Character from selected Characters and add them to password based on passLength
+        for (i = 0; i < passLength; i ++) {
+        randomChar = options[Math.floor(Math.random()*options.length)];
+        password = password + randomChar;
         }
-     
-        var finalPass = random()*passLength;
-
-        console.log(finalPass);
-        
 
 
-
-        // for (var i = 0; i < passLength; i++) {
-        //   i = 
-        //   console.log(password[i]);
-        // }
-
-        
       
-
-        console.log(password);
+        console.log(options);
         console.log(passLength);
-        //console.log(random);
-        //console.log(random);
-        //console.log(random);
+        console.log(password);
       }
 
+      //If no value/invalid value entered for password length
       else {
         alert("Invalide length. must be between 8-128.  Please try again!");
         generatePassword();
