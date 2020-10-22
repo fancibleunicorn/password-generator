@@ -17,7 +17,9 @@ An application to randomly generate unique passwords based on given criteria and
 
 Can create a password between 8 and 128 characters, with options to include uppercase and lower case letters, numbers, and special characters.
 
-#### Technologies
+---
+
+## Technologies
 
 - HTML
 - CSS
